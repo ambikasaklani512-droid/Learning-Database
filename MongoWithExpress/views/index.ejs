@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Chats are here !</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <h1> You Can Find All Chats here !</h1>
+    <div id="chats">
+        <% for( let chat of chats) { %>
+            <div class="card_container">
+                <div class="card">
+                    <p> <span> From : </span>
+                        <i>
+                            <%= chat.from %>
+                        </i>
+                    </p>
+                    <p> <span>To :</span>
+                        <i>
+                            <%= chat.to %>
+                        </i>
+                    </p>
+                    <p> <span>Message :</span>
+                    <div class="msg">
+                        <%= chat.msg %>
+                    </div>
+                    </p>
+                    <div class="dates">
+                        <% if (chat.updated_at) { %>
+                        <span>Updated_at : </span>
+                        <p class="date">
+                        <%= chat.updated_at.toString().split(" ")[0] %> 
+                        <%= chat.updated_at.toString().split(" ").slice(1,4).join(" -") %>
+                            <%= chat.updated_at.toString().split(" ")[4] %>
+                        </p>
+                        <% } %>
+
+                        <span>Created_at : </span>
+                        <p class="date">
+                        <%= chat.created_at.toString().split(" ")[0] %> 
+                        <%= chat.created_at.toString().split(" ").slice(1,4).join(" -") %>
+                            <%= chat.created_at.toString().split(" ")[4] %>
+                        </p>
+                    </div>
+                </div>
+                 <div class=" options">
+                                <div class="edit">
+                                    <form action="/chats/<%= chat._id %>/edit" method="get">
+                                        <button>Edit</button>
+                                    </form>
+                                </div>
+                                <div class="delete">
+                                    <form action="/chats/<%= chat._id %>?_method=DELETE" method="post">
+                                        <button>Delete</button>
+                                    </form>
+                                </div>
+                </div>
+            </div>
+            <% } %>
+    </div>
+
+    <div class="button">
+        <form action="/chats/new" method="get">
+            <button>Create a New Chat</button>
+        </form>
+    </div>
+    </div>
+</body>
+</html>

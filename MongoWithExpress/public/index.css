@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: dodgerblue;
+    font-size: 37px;
+    padding: 12px;
+    background: aliceblue;
+    border: solid 2px dodgerblue;
+}
+
+#chats {
+    margin: 12px 22px;
+}
+
+.card {
+    background-color: aliceblue;
+    border: solid 1px dodgerblue;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+    width: 50%;
+    margin: 28px;
+    border-radius: 12px;
+    padding: 14px;
+}
+
+span {
+    color: dodgerblue;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.msg {
+    padding: 25px;
+    background: dodgerblue;
+    border-radius: 11px;
+    margin: 0 9px;
+    color: #fff;
+    font-size: 22px;
+}
+
+p {
+    font-size: 21px;
+    padding: 10px;
+}
+
+.button {
+    margin: 30px;
+    padding: 12px;
+}
+
+button {
+    padding: 19px;
+    font-size: 21px;
+    font-weight: 600;
+    background: dodgerblue;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.card_container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.options {
+    display: flex;
+    gap: 25px;
+}
+
+.edit button {
+    padding: 19px 25px;
+}
+
+.dates {
+    margin: 13px;
+    gap: 12px;
+}
+.date{
+    padding: 12px 0;
+}

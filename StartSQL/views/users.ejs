@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: rgb(0, 0, 198);
+            font-size: 40px;
+        }
+
+        table,
+        th,
+        tr,
+        td {
+            font-size: 18px;
+            border: solid 1px black;
+        }
+
+        button {
+            padding: 10px 30px;
+            font-size: 21px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: rgb(0, 0, 198);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn {
+            margin: 5px;
+            padding: 8px;
+            font-size: 18px;
+        }
+        #delete{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Users Data</h1>
+    <form action="/user/new" method="get">
+        <button>Add user</button>
+    </form>
+    <table>
+        <!-- table head -->
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+        <!-- table body -->
+        <%for(user of users){ %>
+            <tr>
+                <td>
+                    <%=user.id%>
+                </td>
+                <td>
+                    <%=user.username%>
+                </td>
+                <td>
+                    <%=user.email%>
+                </td>
+                <td>
+                    <%=user.password%>
+                </td>
+                <td>
+                    <form action="/user/<%=user.id%>/edit" method="get">
+                        <button class="btn">Edit username</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/user/<%=user.id%>?_method=DELETE" method="post">
+                        <button class="btn" id="delete">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <%}%>
+    </table>
+</body>
+
+</html>

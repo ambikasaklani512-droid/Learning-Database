@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color: rgb(0, 0, 198);
+        }
+
+        button {
+            padding: 13px 20px;
+            color: rgb(0, 0, 198);
+            border-radius: 7px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        a {
+            all: unset;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Total number of users are : <span>
+            <%= count %>
+        </span></h1>
+    <!-- <form action="/user" method="get">
+        <button>Edit username</button>
+    </form> -->
+    <button><a href="http://localhost:8080/user">Show All Users</a></button>
+</body>
+
+</html>
